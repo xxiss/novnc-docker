@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  nginx:
+    image: docker.io/dougw/novnc:latest
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    environment:
+      REMOTE_HOST: 
+      REMOTE_PORT: ${REMOTE_PORT:-5900}
+
