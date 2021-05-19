@@ -1,4 +1,4 @@
-version: "2"
+version: "2.2"
 
 services:
   novnc:
@@ -8,8 +8,8 @@ services:
     restart: unless-stopped
     ports:
       - "${HTTP_PORT:-6080:6080}"
-#    volumes:
-#      - ./token.conf:/noVNC/token.conf
+    volumes:
+      - ./token.conf:/noVNC/token.conf
 #    environment:
 #      REMOTE_HOST: 
 #      REMOTE_PORT: 
