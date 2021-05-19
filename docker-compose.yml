@@ -1,12 +1,16 @@
-version: "3.3"
+version: "2"
 
 services:
   novnc:
-    image: docker.io/dougw/novnc:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: unless-stopped
     ports:
-      - "8081:8081"
-    environment:
-      REMOTE_HOST: 
-      REMOTE_PORT: ${REMOTE_PORT:-5900}
+      - "${HTTP_PORT:-6080:6080}"
+#    volumes:
+#      - ./token.conf:/noVNC/token.conf
+#    environment:
+#      REMOTE_HOST: 
+#      REMOTE_PORT: 
 
