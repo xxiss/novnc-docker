@@ -10,7 +10,4 @@ services:
       - "${HTTP_PORT:-6080:6080}"
     volumes:
       - ./token.conf:/noVNC/token.conf
-#    environment:
-#      REMOTE_HOST: 
-#      REMOTE_PORT: 
 
